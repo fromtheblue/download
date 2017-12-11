@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * @func  download
+     * @desc  下载文件
+     * @param fileURL 下载地址
+     */
+    function download(fileURL) {
+        var a = document.createElement("a");
+        a.target = "_blank";
+        a.href = fileURL;
+        /*ie需要text,否则点击不执行*/
+        a.innerText = "ieNeed";
+        a.download = true;
+        /*firefox需要将a放入文档,否则不执行*/
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+</script>
+</body>
+</html>
